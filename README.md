@@ -1,21 +1,6 @@
 # Example App
 
-Example [Laravel 9](https://laravel.com/docs/9.x/) app with the following packages:
-
-* [Laravel Nova 4](https://nova.laravel.com/)
-* [Inertia.js](https://inertiajs.com/)
-* [Laravel-tags by Spatie](https://spatie.be/docs/laravel-tags/v4)
-* [norman-huth/api-controller](https://github.com/Muetze42/api-controller)
-* [Laravel-activitylog by Spatie](https://spatie.be/docs/laravel-activitylog/v4)
-* [Laravel-medialibrary by Spatie](https://spatie.be/docs/laravel-medialibrary/v10)
-* [dmitrybubyakin/nova-medialibrary-field](https://github.com/dmitrybubyakin/nova-medialibrary-field)
-
-For Frontend Assets:
-
-* [Vite](https://vitejs.dev/) + [Laravel Vite Plugin](https://laravel.com/docs/9.x/vite)
-* [Tailwind CSS](https://tailwindcss.com/)
-* [Vue.js 3](https://vuejs.org/)
-* [Headless UI](https://headlessui.com/)
+Example [Laravel 9](https://laravel.com/docs/9.x/) app
 
 ## Installation
 
@@ -48,6 +33,8 @@ php artisan key:generate
 ```
 
 #### Migrate database and seed example data
+
+**! Using database Artisan commands in the Laravel Docker Container !**
 
 ```shell
 php artisan migrate:fresh --seed
@@ -85,3 +72,20 @@ npm run prod
 * Models `Article` & `Story` have tags by using [Laravel-tags by Spatie](https://spatie.be/docs/laravel-tags/v4/introduction)
 * Model activities will be logged with [Laravel-activitylog by Spatie](https://spatie.be/docs/laravel-activitylog/v4)
 * Activity API index with filter options
+
+### Packages
+
+* [Laravel Nova 4](https://nova.laravel.com/)
+* [Inertia.js](https://inertiajs.com/)
+* [Laravel-tags by Spatie](https://spatie.be/docs/laravel-tags/v4)
+* [norman-huth/api-controller](https://github.com/Muetze42/api-controller)
+* [Laravel-activitylog by Spatie](https://spatie.be/docs/laravel-activitylog/v4)
+* [Laravel-medialibrary by Spatie](https://spatie.be/docs/laravel-medialibrary/v10)
+* [dmitrybubyakin/nova-medialibrary-field](https://github.com/dmitrybubyakin/nova-medialibrary-field)
+
+For Frontend Assets:
+
+* [Vite](https://vitejs.dev/) + [Laravel Vite Plugin](https://laravel.com/docs/9.x/vite)
+* [Tailwind CSS](https://tailwindcss.com/)
+* [Vue.js 3](https://vuejs.org/)
+* [Headless UI](https://headlessui.com/)
