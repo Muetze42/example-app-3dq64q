@@ -2,6 +2,7 @@
 
 namespace App\Nova\Resources;
 
+use App\Nova\Filters\UserFilter;
 use App\Nova\Metrics\StoriesPerUser;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
@@ -110,7 +111,9 @@ class Story extends Resource
      */
     public function filters(NovaRequest $request): array
     {
-        return [];
+        return [
+            new UserFilter('stories'),
+        ];
     }
 
     /**

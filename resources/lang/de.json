@@ -27,5 +27,6 @@
     ":days Days": ":days Tage",
     "New Users": "Neue Benutzer",
     "Users Per Day": "Benutzer Pro Tag",
-    "Article Per User": "Artikel Pro Benutzer"
+    "Article Per User": "Artikel Pro Benutzer",
+    "Stories Per User": "Geschichten Pro Benutzer"
 }
