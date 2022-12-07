@@ -4,6 +4,7 @@ namespace App\Nova\Resources;
 
 use App\Nova\Fields\RoleBooleanGroup;
 use App\Nova\Filters\User\RoleFilter;
+use App\Nova\Metrics\UsersPerDay;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Validation\Rules;
 use Laravel\Nova\Fields\HasMany;
@@ -99,7 +100,9 @@ class User extends Resource
      */
     public function cards(NovaRequest $request): array
     {
-        return [];
+        return [
+            new UsersPerDay,
+        ];
     }
 
     /**
