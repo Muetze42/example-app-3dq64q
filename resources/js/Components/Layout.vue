@@ -9,7 +9,11 @@
             </Link>
         </div>
         <Menu as="div" class="menu">
-            <MenuButton class="btn">
+            <MenuButton class="btn" v-if="user">
+                <font-awesome-icon icon="fa-solid fa-user" class="fa-fw"/>
+                {{ user.name }}
+            </MenuButton>
+            <MenuButton class="btn" v-else>
                 {{ __('Login') }}
             </MenuButton>
             <transition
@@ -62,6 +66,13 @@
 </template>
 
 <script>
+import {library} from '@fortawesome/fontawesome-svg-core'
+import {
+    faUser,
+} from '@fortawesome/free-solid-svg-icons'
+library.add(
+    faUser,
+);
 import {
     Menu,
     MenuButton,
