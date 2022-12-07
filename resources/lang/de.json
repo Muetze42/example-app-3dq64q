@@ -23,5 +23,9 @@
     "Are you sure you want to log out?": "Bist du sicher, dass du dich abmelden willst?",
     "Password": "Passwort",
     "Email Address": "E-Mail Adresse",
-    "Remember me": "Angemeldet bleiben"
+    "Remember me": "Angemeldet bleiben",
+    ":days Days": ":days Tage",
+    "New Users": "Neue Benutzer",
+    "Users Per Day": "Benutzer Pro Tag",
+    "Article Per User": "Artikel Pro Benutzer"
 }

@@ -3,6 +3,7 @@
 namespace App\Nova\Resources;
 
 use App\Nova\Filters\UserFilter;
+use App\Nova\Metrics\ArticlesPerUser;
 use DmitryBubyakin\NovaMedialibraryField\Fields\Medialibrary;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
@@ -56,8 +57,10 @@ class Article extends Resource
      */
     public static $search = [
         'title',
-        'content',
+        'excerpt',
         'user.name',
+        'content',
+        'tags.name',
     ];
 
     /**
@@ -104,7 +107,9 @@ class Article extends Resource
      */
     public function cards(NovaRequest $request): array
     {
-        return [];
+        return [
+            new ArticlesPerUser,
+        ];
     }
 
     /**

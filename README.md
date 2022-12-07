@@ -72,6 +72,7 @@ npm run prod
 * Models `Article` & `Story` have tags by using [Laravel-tags by Spatie](https://spatie.be/docs/laravel-tags/v4/introduction)
 * Model activities will be logged with [Laravel-activitylog by Spatie](https://spatie.be/docs/laravel-activitylog/v4)
 * Activity API index with filter options
+* A small playground with roles and permissions. See [RoleSeeder](database/seeders/RoleSeeder.php)
 
 ### Packages
 
@@ -81,6 +82,7 @@ npm run prod
 * [norman-huth/api-controller](https://github.com/Muetze42/api-controller)
 * [Laravel-activitylog by Spatie](https://spatie.be/docs/laravel-activitylog/v4)
 * [Laravel-medialibrary by Spatie](https://spatie.be/docs/laravel-medialibrary/v10)
+* [Laravel-permission by Spatie](https://spatie.be/docs/laravel-permission/v5)
 * [dmitrybubyakin/nova-medialibrary-field](https://github.com/dmitrybubyakin/nova-medialibrary-field)
 
 For Frontend Assets:

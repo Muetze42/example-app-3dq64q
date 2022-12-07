@@ -2,6 +2,7 @@
 
 namespace App\Nova\Resources;
 
+use App\Nova\Metrics\StoriesPerUser;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\MorphMany;
@@ -44,7 +45,7 @@ class Story extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'title';
 
     /**
      * The columns that should be searched.
@@ -52,7 +53,10 @@ class Story extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'title',
+        'user.name',
+        'content',
+        'tags.name',
     ];
 
     /**
@@ -93,7 +97,9 @@ class Story extends Resource
      */
     public function cards(NovaRequest $request): array
     {
-        return [];
+        return [
+            new StoriesPerUser,
+        ];
     }
 
     /**

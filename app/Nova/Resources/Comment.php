@@ -2,6 +2,7 @@
 
 namespace App\Nova\Resources;
 
+use Illuminate\Support\Str;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\MorphTo;
@@ -43,6 +44,16 @@ class Comment extends Resource
     public static function singularLabel(): string
     {
         return __('Comment');
+    }
+
+    /**
+     * Get the value that should be displayed to represent the resource.
+     *
+     * @return string
+     */
+    public function title(): string
+    {
+        return Str::limit($this->content, 30);
     }
 
     /**
