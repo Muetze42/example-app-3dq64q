@@ -58,9 +58,9 @@ npm run prod
 
 * Admin Account: `admin@example.app`
 * Password for every seeded account: `password`
-* Public Page: http://example-app.test (Get Server Error without run one time npm prod)
-* Administration: http://example-app.test/admin
-* API: http://example-app.test/api (Postman Collection: [example-app.postman-collection.json](example-app.postman_collection.json))
+* Public Page: http://localhost (Get Server Error without run one time npm prod)
+* Administration: http://localhost/admin
+* API: http://localhost/api (Postman Collection: [example-app.postman-collection.json](example-app.postman_collection.json))
 * API Authentication is made possible with [Laravel Sanctum](https://laravel.com/docs/9.x/sanctum)
 
 ### A small overview
