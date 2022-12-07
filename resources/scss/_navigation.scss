@@ -1,0 +1,54 @@
+.menu {
+    @apply relative inline-block;
+}
+.menu-items {
+    @apply absolute mt-1 w-56 right-0 rounded-sm shadow-lg ring-1 ring-opacity-5 focus:outline-none;
+
+    @apply bg-primary-200;
+    @apply dark:bg-primary-500;
+}
+.menu-item {
+    @apply flex w-full items-center rounded-sm px-2 py-2;
+
+    svg {
+        @apply mr-1.5;
+    }
+    &.active {
+        @apply bg-primary-300 dark:bg-primary-600;
+    }
+}
+.menu-items {
+    @apply absolute mt-1 w-56 right-0 rounded-sm shadow-lg ring-1 ring-opacity-5 focus:outline-none;
+
+    @apply bg-primary-200;
+    @apply dark:bg-primary-500;
+}
+.menu-item {
+    @apply flex w-full items-center rounded-sm px-2 py-2;
+
+    svg {
+        @apply mr-1.5;
+    }
+    &.active {
+        @apply bg-primary-300 dark:bg-primary-600;
+    }
+}
+button, a {
+    &.menu-item {
+        @apply hover:ring-1 ring-offset-slate-50 ring-offset-0;
+
+        @apply hover:bg-primary-300 hover:ring-primary-500;
+        @apply dark:hover:bg-primary-700 dark:hover:ring-primary-300;
+    }
+}
+
+.pagination {
+    @apply mt-8 text-center;
+
+    .btn {
+        @apply min-w-[2.5rem];
+    }
+    .active {
+        @apply bg-primary-400;
+    }
+}

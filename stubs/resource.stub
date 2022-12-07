@@ -1,0 +1,10 @@
+<?php
+
+namespace {{ namespace }};
+
+use NormanHuth\HelpersLaravel\App\Http\Resources\Json\JsonResource;
+
+class {{ class }} extends JsonResource
+{
+    //
+}

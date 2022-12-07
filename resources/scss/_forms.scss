@@ -1,0 +1,18 @@
+.form-top {
+    @apply block text-center;
+    label {
+        @apply text-sm select-none;
+    }
+
+    .form-row {
+        @apply mb-2 ;
+
+        &:last-child {
+            @apply mb-0;
+        }
+    }
+}
+
+.form-input {
+    @apply p-1 text-sm text-black;
+}

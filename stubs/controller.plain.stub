@@ -1,0 +1,13 @@
+<?php
+
+namespace {{ namespace }};
+
+//use NormanHuth\ApiController\Controller;
+//use Illuminate\Http\Request;
+//use Inertia\Inertia;
+//use Inertia\Response;
+
+class {{ class }} extends Controller
+{
+    //
+}

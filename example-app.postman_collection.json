@@ -1,0 +1,1444 @@
+{
+	"info": {
+		"_postman_id": "75b8453f-8903-4a70-a5f5-6d821d3bc060",
+		"name": "example-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Get Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{APP_URL}}/api/auth?email=admin@example.app&password=password",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"auth"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "admin@example.app"
+								},
+								{
+									"key": "password",
+									"value": "password"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Articles",
+			"item": [
+				{
+					"name": "Index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{APP_URL}}/api/articles?include=user,tags,media,comments",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"articles"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"description": "Optional: Pagination",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "50",
+									"description": "Optional: Per Page Limit (5-100)",
+									"disabled": true
+								},
+								{
+									"key": "withTrashed",
+									"value": "1",
+									"description": "Optional: Include trashed items",
+									"disabled": true
+								},
+								{
+									"key": "onlyTrashed",
+									"value": "1",
+									"description": "Optional: Only trashed items",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "user,tags,media,comments",
+									"description": "Optional: include relationship. Example: user,tags,media,comments"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{APP_URL}}/api/articles/:id?include=user,tags,media,comments&withTrashed=1",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"articles",
+								":id"
+							],
+							"query": [
+								{
+									"key": "include",
+									"value": "user,tags,media,comments",
+									"description": "Optional: include relationship. Example: user,tags,media,comments"
+								},
+								{
+									"key": "withTrashed",
+									"value": "1",
+									"description": "Optional: Include trashed items"
+								},
+								{
+									"key": "onlyTrashed",
+									"value": "1",
+									"description": "Optional: Only trashed items",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Neuer Titel",
+									"description": "Required. Max 50",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "Das ist ein neuer Content",
+									"description": "Required",
+									"type": "text"
+								},
+								{
+									"key": "picture",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								},
+								{
+									"key": "tags",
+									"value": "Kotlin",
+									"description": "Optional Tags Method 1: Sync Single Tag",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "tags",
+									"value": "[\"Python\",\"Java\"]",
+									"description": "Optional Tags Method 2: Sync Multiple Tag",
+									"type": "text"
+								},
+								{
+									"key": "tags[]",
+									"value": "JavaScript",
+									"description": "Optional Tags Method 3: Sync Multiple Tag",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "tags[]",
+									"value": "TypeScript",
+									"description": "Optional Tags Method 3: Sync Multiple Tag",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "unique",
+									"value": "1",
+									"description": "Optional: If an entry with this title and content already exists, no new entry will be created.",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "excerpt",
+									"value": "Auszug",
+									"description": "Optional. Max 100",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{APP_URL}}/api/articles",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"articles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Neuer Titel",
+									"description": "Max 50",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "Anders",
+									"type": "text"
+								},
+								{
+									"key": "picture",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								},
+								{
+									"key": "_method",
+									"value": "PUT",
+									"description": "Notice: PUT not working with Postman + form-data",
+									"type": "text"
+								},
+								{
+									"key": "tags",
+									"value": "JavaScript",
+									"description": "Optional Tags Method 1: Sync Single Tag",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "tags",
+									"value": "[\"Python\",\"Swift\"]",
+									"description": "Optional Tags Method 2: Sync Multiple Tag",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "tags[]",
+									"value": "Rust",
+									"description": "Optional Tags Method 3: Sync Multiple Tag",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "tags[]",
+									"value": "Go",
+									"description": "Optional Tags Method 3: Sync Multiple Tag",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "excerpt",
+									"value": "",
+									"description": "Optional. Max 100",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{APP_URL}}/api/articles/:id",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"articles",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{APP_URL}}/api/articles/:id",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"articles",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Restore",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{APP_URL}}/api/articles/:id/restore",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"articles",
+								":id",
+								"restore"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Force Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{APP_URL}}/api/articles/:id/force-delete",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"articles",
+								":id",
+								"force-delete"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Attach Tags",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "tags",
+									"value": "PHP",
+									"description": "Method 1: Add single Tag",
+									"type": "text"
+								},
+								{
+									"key": "tags",
+									"value": "[\"Go\",\"Java\"]",
+									"description": "Method 2: Add multiple Tags",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "tags[]",
+									"value": "Python",
+									"description": "Method 3",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "tags[]",
+									"value": "Kotlin",
+									"description": "Method 3",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{APP_URL}}/api/articles/:id/attach-tags",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"articles",
+								":id",
+								"attach-tags"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detach Tags",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "tags",
+									"value": "Schuh",
+									"description": "Method 1: Remove single Tag",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "tags",
+									"value": "[\"Kotlin\",\"Rust\"]",
+									"description": "Method 2: Remove multiple Tags",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "tags[]",
+									"value": "Go",
+									"description": "Method 3",
+									"type": "text"
+								},
+								{
+									"key": "tags[]",
+									"value": "PHP",
+									"description": "Method 3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{APP_URL}}/api/articles/:id/detach-tags",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"articles",
+								":id",
+								"detach-tags"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sync Tags",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "tags",
+									"value": "C#",
+									"description": "Method 1: Single Tag",
+									"type": "text"
+								},
+								{
+									"key": "tags",
+									"value": "[\"PHP\",\"JavaScript\"]",
+									"description": "Method 2: Multiple Tags",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "tags[]",
+									"value": "Python",
+									"description": "Method 3",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "tags[]",
+									"value": "JavaScript",
+									"description": "Method 3",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{APP_URL}}/api/articles/:id/sync-tags",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"articles",
+								":id",
+								"sync-tags"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add comment",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{APP_URL}}/api/articles/:id/morph/comments?content=Mein Kommentar",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"articles",
+								":id",
+								"morph",
+								"comments"
+							],
+							"query": [
+								{
+									"key": "content",
+									"value": "Mein Kommentar",
+									"description": "Required"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Stories",
+			"item": [
+				{
+					"name": "Index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{APP_URL}}/api/stories?include=user,tags,comments",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"stories"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"description": "Optional: Pagination",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "50",
+									"description": "Optional: Per Page Limit (5-100)",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "user,tags,comments",
+									"description": "Optional: include relationship. Example: user,tags,comments"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{APP_URL}}/api/stories/:id?include=user,tags,comments",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"stories",
+								":id"
+							],
+							"query": [
+								{
+									"key": "include",
+									"value": "user,tags,comments",
+									"description": "Optional: include relationship. Example: user,tags,comments"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{APP_URL}}/api/stories?title=Neuer Geschichte&content=Es war einmal....&tags[]=Science-Fiction&tags[]=Comedy",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"stories"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "Neuer Geschichte",
+									"description": "Required"
+								},
+								{
+									"key": "content",
+									"value": "Es war einmal....",
+									"description": "Required"
+								},
+								{
+									"key": "tags",
+									"value": "Drama",
+									"description": "Optional Tags Method 1: Sync Single Tag",
+									"disabled": true
+								},
+								{
+									"key": "tags",
+									"value": "[\"Thriller\",\"History\"]",
+									"description": "Optional Tags Method 2: Sync Multiple Tag",
+									"disabled": true
+								},
+								{
+									"key": "tags[]",
+									"value": "Science-Fiction",
+									"description": "Optional Tags Method 3: Sync Multiple Tag"
+								},
+								{
+									"key": "tags[]",
+									"value": "Comedy",
+									"description": "Optional Tags Method 3: Sync Multiple Tag"
+								},
+								{
+									"key": "unique",
+									"value": "1",
+									"description": "Optional: If an entry with this title and content already exists, no new entry will be created.",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{APP_URL}}/api/stories/:id?title=Neuer Titel&content=Ich habe was vergessen&tags[]=Teller&tags[]=Gabel",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"stories",
+								":id"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "Neuer Titel"
+								},
+								{
+									"key": "content",
+									"value": "Ich habe was vergessen"
+								},
+								{
+									"key": "tags",
+									"value": "Monitor",
+									"description": "Optional Tags Method 1: Sync Single Tag",
+									"disabled": true
+								},
+								{
+									"key": "tags",
+									"value": "[\"Zug\",\"TV\"]",
+									"description": "Optional Tags Method 2: Sync Multiple Tag",
+									"disabled": true
+								},
+								{
+									"key": "tags[]",
+									"value": "Teller",
+									"description": "Optional Tags Method 3: Sync Multiple Tag"
+								},
+								{
+									"key": "tags[]",
+									"value": "Gabel",
+									"description": "Optional Tags Method 3: Sync Multiple Tag"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "16"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{APP_URL}}/api/stories/:id",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"stories",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Attach Tags",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "tags",
+									"value": "Thriller",
+									"description": "Method 1: Add single Tag",
+									"type": "text"
+								},
+								{
+									"key": "tags",
+									"value": "[\"Science-Fiction\",\"Comedy\"]",
+									"description": "Method 2: Add multiple Tags",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "tags[]",
+									"value": "History",
+									"description": "Method 3",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "tags[]",
+									"value": "Fantasy",
+									"description": "Method 3",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{APP_URL}}/api/stories/:id/attach-tags",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"stories",
+								":id",
+								"attach-tags"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detach Tags",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "tags",
+									"value": "History",
+									"description": "Method 1: Remove single Tag",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "tags",
+									"value": "[\"Science-Fiction\",\"Thriller\"]",
+									"description": "Method 2: Remove multiple Tags",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "tags[]",
+									"value": "Comedy",
+									"description": "Method 3",
+									"type": "text"
+								},
+								{
+									"key": "tags[]",
+									"value": "Fantasy",
+									"description": "Method 3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{APP_URL}}/api/stories/:id/detach-tags",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"stories",
+								":id",
+								"detach-tags"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sync Tags",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "tags",
+									"value": "Comedy",
+									"description": "Method 1: Single Tag",
+									"type": "text"
+								},
+								{
+									"key": "tags",
+									"value": "[\"Fantasy\",\"Thriller\"]",
+									"description": "Method 2: Multiple Tags",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "tags[]",
+									"value": "Science-Fiction",
+									"description": "Method 3",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "tags[]",
+									"value": "History",
+									"description": "Method 3",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{APP_URL}}/api/stories/:id/sync-tags",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"stories",
+								":id",
+								"sync-tags"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add comment",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{APP_URL}}/api/stories/:id/morph/comments?content=Mein Kommentar",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"stories",
+								":id",
+								"morph",
+								"comments"
+							],
+							"query": [
+								{
+									"key": "content",
+									"value": "Mein Kommentar",
+									"description": "Required"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{APP_URL}}/api/users?include=roles&limit=50",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "include",
+									"value": "roles",
+									"description": "Optional: include relationship"
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"description": "Optional: Pagination",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "50",
+									"description": "Optional: Per Page Limit (5-100)"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{APP_URL}}/api/users/:id?include=roles,articles,articles.media",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								":id"
+							],
+							"query": [
+								{
+									"key": "include",
+									"value": "roles,articles,articles.media",
+									"description": "Optional: include relationship. Example: roles,articles,articles.media"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "Index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{APP_URL}}/api/comments",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"comments"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"description": "Optional: Pagination",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "50",
+									"description": "Optional: Per Page Limit (5-100)",
+									"disabled": true
+								},
+								{
+									"key": "withTrashed",
+									"value": "1",
+									"description": "Optional: Include trashed items",
+									"disabled": true
+								},
+								{
+									"key": "onlyTrashed",
+									"value": "1",
+									"description": "Optional: Only trashed items",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{APP_URL}}/api/comments/:id",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"comments",
+								":id"
+							],
+							"query": [
+								{
+									"key": "withTrashed",
+									"value": "1",
+									"description": "Optional: Include trashed items",
+									"disabled": true
+								},
+								{
+									"key": "onlyTrashed",
+									"value": "1",
+									"description": "Optional: Only trashed items",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{APP_URL}}/api/comments/:id?content=Anderer Kommentar",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"comments",
+								":id"
+							],
+							"query": [
+								{
+									"key": "content",
+									"value": "Anderer Kommentar"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{APP_URL}}/api/comments/:id",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"comments",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Restore",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{APP_URL}}/api/comments/:id/restore",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"comments",
+								":id",
+								"restore"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Force Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{APP_URL}}/api/comments/:id/force-delete",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"comments",
+								":id",
+								"force-delete"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Activities",
+			"item": [
+				{
+					"name": "Index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{APP_URL}}/api/activities?page=1",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"activities"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"description": "Optional: Pagination"
+								},
+								{
+									"key": "limit",
+									"value": "50",
+									"description": "Optional: Per Page Limit (5-100)",
+									"disabled": true
+								},
+								{
+									"key": "filter[log_name]",
+									"value": "comments",
+									"description": "Optional: Filter by log_name. Example: comments",
+									"disabled": true
+								},
+								{
+									"key": "filter[event]",
+									"value": "created",
+									"description": "Optional: Filter by description. Otions: created, updated, deleted, restored",
+									"disabled": true
+								},
+								{
+									"key": "filter[subject_type]",
+									"value": "App\\Models\\Comment",
+									"description": "Optional: Filter by subject_type. Example: App\\Models\\Comment",
+									"disabled": true
+								},
+								{
+									"key": "filter[subject_id]",
+									"value": "1",
+									"description": "Optional: Filter by subject_id. int",
+									"disabled": true
+								},
+								{
+									"key": "filter[causer_type]",
+									"value": "",
+									"description": "Optional: Filter by causer_type. App\\Models\\User|null",
+									"disabled": true
+								},
+								{
+									"key": "filter[causer_id]",
+									"value": "",
+									"description": "Optional: Filter by causer_id. int|null",
+									"disabled": true
+								},
+								{
+									"key": "filter[properties]",
+									"value": "laboriosam",
+									"description": "Optional Like filter by properties. Using LIKE %string%",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{APP_URL}}/api/activities/:id",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"api",
+								"activities",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{APP_URL}}/api",
+					"host": [
+						"{{APP_URL}}"
+					],
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{TOKEN}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "APP_URL",
+			"value": "http://localhost",
+			"type": "string"
+		},
+		{
+			"key": "TOKEN",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

@@ -1,0 +1,41 @@
+.dialog {
+    @apply fixed z-40 inset-0 overflow-y-auto select-none;
+}
+.dialog-container {
+    @apply flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0;
+}
+.dialog-overlay {
+    @apply fixed inset-0 bg-neutral-900 bg-opacity-90 transition-opacity cursor-pointer;
+}
+.dialog-fix {
+    @apply hidden sm:inline-block sm:align-middle sm:h-screen;
+}
+.dialog-content {
+    @apply inline-block align-bottom rounded text-left overflow-hidden shadow-xl transform transition-all sm:align-middle w-full bg-primary-900 border;
+    @apply max-w-xl;
+}
+.dialog-title {
+    @apply p-2 flex justify-between;
+
+    button {
+        @apply focus:outline-0 hover:text-primary-300;
+
+        * {
+            @apply focus:outline-0;
+        }
+    }
+}
+.next {
+    @apply mx-auto my-1;
+}
+.dialog-scroll {
+    @apply overflow-y-auto max-h-60 flex flex-wrap px-1 pt-1 pb-4 px-2;
+
+    p {
+        @apply mb-3;
+
+        &:last-child {
+            @apply mb-0;
+        }
+    }
+}
