@@ -52,6 +52,22 @@ a.quote {
     @apply hover:bg-primary-600 cursor-pointer;
 }
 
+.comments {
+    @apply mx-auto max-w-2xl mt-2 bg-primary-800 p-2;
+
+    .comment {
+        @apply border rounded py-1 px-2;
+    }
+}
+
+.error {
+    @apply font-semibold flex p-2 text-sm text-rose-800 bg-red-100 rounded dark:bg-red-200 dark:text-red-800;
+}
+
+.success {
+    @apply p-2 mb-4 font-semibold text-emerald-800 bg-green-100 rounded dark:bg-green-200 dark:text-green-800;
+}
+
 @import "navigation";
 @import "forms";
 @import "dialog";

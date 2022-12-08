@@ -4,7 +4,12 @@
         <Link class="quote" v-for="story in stories.data" :href="'/stories/'+story.id">
             <h2>{{ story.title }}</h2>
             <span class="excerpt italic">
+                <font-awesome-icon icon="fa-solid fa-feather" class="fa-fw" />
                 {{ __('Author') }}: {{ story.author }}
+            </span>
+            <span class="excerpt block">
+                <font-awesome-icon icon="fa-solid fa-comment" class="fa-fw" />
+                {{ story.comments }} {{ story.comments == 1 ? __('Comment') : __('Comments') }}
             </span>
         </Link>
     </div>
@@ -12,6 +17,15 @@
 </template>
 
 <script>
+import {library} from '@fortawesome/fontawesome-svg-core'
+import {
+    faComment,
+    faFeather,
+} from '@fortawesome/free-solid-svg-icons'
+library.add(
+    faComment,
+    faFeather,
+);
 export default {
     props: {
         stories: Object,

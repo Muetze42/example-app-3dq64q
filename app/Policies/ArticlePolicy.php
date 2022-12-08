@@ -118,4 +118,15 @@ class ArticlePolicy
     {
         return $this->samePermission($user, $article);
     }
+
+    /**
+     * Determine whether the user can add a comment to the podcast.
+     *
+     * @param User|null $user
+     * @return bool
+     */
+    public function addComment(?User $user): bool
+    {
+        return true;
+    }
 }

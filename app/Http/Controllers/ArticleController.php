@@ -9,12 +9,15 @@ use Inertia\Response;
 
 class ArticleController extends Controller
 {
+    /**
+     * @param Request $request
+     * @return Response
+     */
     public function index(Request $request): Response
     {
         $articles = Article::query()
             ->orderByDesc('created_at')
             ->paginate(10)
-            ->withQueryString()
             ->through(fn(Article $article) => [
                 'id'      => $article->getKey(),
                 'title'   => $article->title,

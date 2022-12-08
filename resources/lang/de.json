@@ -29,5 +29,11 @@
     "Users Per Day": "Benutzer Pro Tag",
     "Article Per User": "Artikel Pro Benutzer",
     "Stories Per User": "Geschichten Pro Benutzer",
-    "No Role": "Keine Rolle"
+    "No Role": "Keine Rolle",
+    "Guest": "Gast",
+    "No comments available yet": "Noch keine Kommentare vorhanden",
+    ":user wrote at :date": ":user schrieb am :date",
+    "A guest wrote at :date": "Ein Gast schrieb am :date",
+    "Write comment": "Kommentar schreiben",
+    "Save comment": "Kommentar speichern"
 }

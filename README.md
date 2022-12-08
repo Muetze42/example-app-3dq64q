@@ -66,6 +66,10 @@ composer install
 php artisan migrate
 ```
 
+```shell
+npm run prod
+```
+
 **Clear Browser Cache**
 
 ## Informationen

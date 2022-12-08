@@ -17,7 +17,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [ArticleController::class, 'index'])->name('article.index');
-Route::resource('/stories', StoryController::class)->only(['index', 'show']);
+Route::post('stories/{story}/add-comment', [StoryController::class, 'addComment'])->name('story.add-comment');
+Route::resource('stories', StoryController::class)->only(['index', 'show']);
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 Route::post('login', [AuthController::class, 'login'])->name('auth.login');

@@ -54,7 +54,6 @@ import {
 library.add(
     faSquareXmark,
 );
-import Pagination from './../../Components/Pagination.vue';
 import {
     Dialog,
     DialogPanel,
@@ -81,7 +80,6 @@ export default {
         }
     },
     components: {
-        Pagination,
         Dialog,
         DialogPanel,
         DialogTitle,

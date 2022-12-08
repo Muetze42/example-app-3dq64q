@@ -103,4 +103,15 @@ class StoryPolicy
     {
         return $user && $user->hasRole('admin');
     }
+
+    /**
+     * Determine whether the user can add a comment to the podcast.
+     *
+     * @param ?User $user
+     * @return bool
+     */
+    public function addComment(?User $user): bool
+    {
+        return true;
+    }
 }
