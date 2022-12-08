@@ -54,6 +54,20 @@ npm i
 npm run prod
 ```
 
+## Update after pull
+
+```shell
+composer install
+```
+
+**! Using database Artisan commands in the Laravel Docker Container !**
+
+```shell
+php artisan migrate
+```
+
+**Clear Browser Cache**
+
 ## Informationen
 
 * Admin Account: `admin@example.app`
@@ -83,7 +97,8 @@ npm run prod
 * [Laravel-activitylog by Spatie](https://spatie.be/docs/laravel-activitylog/v4)
 * [Laravel-medialibrary by Spatie](https://spatie.be/docs/laravel-medialibrary/v10)
 * [Laravel-permission by Spatie](https://spatie.be/docs/laravel-permission/v5)
-* [dmitrybubyakin/nova-medialibrary-field](https://github.com/dmitrybubyakin/nova-medialibrary-field)
+* [dmitrybubyakin/nova-medialibrary-field](https://github.com/dmitrybubyakin/nova-medialibrary-field) (Nova Article)
+* [ebess/advanced-nova-media-library](https://github.com/ebess/advanced-nova-media-library) (Nova User)
 
 For Frontend Assets:
 

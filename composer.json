@@ -17,6 +17,7 @@
         "php": "^8.0.2",
         "coderello/laravel-nova-lang": "^2.0",
         "dmitrybubyakin/nova-medialibrary-field": "^4.0",
+        "ebess/advanced-nova-media-library": "^4.0",
         "guzzlehttp/guzzle": "^7.2",
         "inertiajs/inertia-laravel": "~0.0",
         "laravel/framework": "^9.19",

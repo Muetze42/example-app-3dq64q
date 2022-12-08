@@ -7,12 +7,14 @@ use App\Nova\Filters\User\RoleFilter;
 use App\Nova\Metrics\UsersPerDay;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Validation\Rules;
+use Laravel\Nova\Fields\Avatar;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Password;
 use Laravel\Nova\Fields\PasswordConfirmation;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Ebess\AdvancedNovaMediaLibrary\Fields\Images;
 
 class User extends Resource
 {
@@ -72,6 +74,14 @@ class User extends Resource
             Text::make(__('Name'), 'name')
                 ->sortable()
                 ->rules('required', 'max:255'),
+
+            Images::make(__('Avatar'), 'avatar')
+                ->conversionOnIndexView('thumb')
+                ->croppingConfigs(['aspectRatio' => 1])->mustCrop()->hideFromIndex(),
+
+            Avatar::make('Avatar')->thumbnail(function () {
+                return $this->getFirstMediaUrl('avatar', 'thumb');
+            })->onlyOnIndex(),
 
             Text::make(__('Email'), 'email')
                 ->sortable()
