@@ -38,7 +38,8 @@ class RoleFilter extends Filter
     public function apply(NovaRequest $request, $query, $value): Builder
     {
         /* @var User|Builder $query */
-        return $query->whereHas('roles', function ($role) use ($value) {
+        return $value == '-' ? $query->whereDoesntHave('roles') :
+            $query->whereHas('roles', function ($role) use ($value) {
             /* @var Role|Builder $role */
             return $role->where('name', $value);
         });
@@ -52,6 +53,9 @@ class RoleFilter extends Filter
      */
     public function options(NovaRequest $request): array
     {
-        return Role::pluck('name', 'name')->toArray();
+        return array_merge(
+            Role::pluck('name', 'name')->toArray(),
+            [__('No Role') => '-']
+        );
     }
 }
