@@ -32,6 +32,12 @@ composer install
 php artisan key:generate
 ```
 
+#### Link Storage
+
+```shell
+php artisan storage:link
+```
+
 #### Migrate database and seed example data
 
 **! Using database Artisan commands in the Laravel Docker Container !**
