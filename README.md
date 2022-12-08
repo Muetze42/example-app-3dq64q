@@ -87,7 +87,7 @@ php artisan migrate
 * Model activities will be logged with [Laravel-activitylog by Spatie](https://spatie.be/docs/laravel-activitylog/v4)
 * Activity API index with filter options
 * A small playground with roles and permissions. See [RoleSeeder](database/seeders/RoleSeeder.php)
-* Seeder: Every user with a role and 50% of users without roles have an Avatar
+* Seeder: Every user with a role and 50% of users without a role have an Avatar
 * Fallback image for user Avatar
 
 ### Packages
