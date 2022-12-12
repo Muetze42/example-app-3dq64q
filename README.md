@@ -57,7 +57,7 @@ npm i
 #### Run one time production
 
 ```shell
-npm run prod
+npm run build
 ```
 
 ## Update after pull
