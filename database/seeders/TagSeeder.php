@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Article;
 use App\Models\Story;
-use App\Models\Tag;
+use NormanHuth\HelpersLaravel\Spatie\Tags\Tag;
 use Illuminate\Database\Seeder;
 
 class TagSeeder extends Seeder

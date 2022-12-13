@@ -42,6 +42,11 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
         Nova::footer(function ($request) {
             return '';
         });
+
+        app()->bind(
+            \Spatie\TagsField\Http\Controllers\TagsFieldController::class,
+            \NormanHuth\HelpersLaravel\Spatie\Tags\TagsFieldController::class,
+        );
     }
 
     /**

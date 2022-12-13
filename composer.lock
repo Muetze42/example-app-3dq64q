@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1dcb0460b13fe0b673d9aa8fb1f889d0",
+    "content-hash": "85a89db7d88b071f35124b14bdb596bc",
     "packages": [
         {
             "name": "brick/math",
@@ -3170,16 +3170,16 @@
         },
         {
             "name": "norman-huth/helpers-collection-laravel",
-            "version": "1.0.7",
+            "version": "1.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Muetze42/helpers-collection-laravel.git",
-                "reference": "879bd39dc26bc2f486d58b4f7ba42edc9f2872a8"
+                "reference": "1a2b2f305c274b085a94edef5f183db4c63ca204"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Muetze42/helpers-collection-laravel/zipball/879bd39dc26bc2f486d58b4f7ba42edc9f2872a8",
-                "reference": "879bd39dc26bc2f486d58b4f7ba42edc9f2872a8",
+                "url": "https://api.github.com/repos/Muetze42/helpers-collection-laravel/zipball/1a2b2f305c274b085a94edef5f183db4c63ca204",
+                "reference": "1a2b2f305c274b085a94edef5f183db4c63ca204",
                 "shasum": ""
             },
             "require": {
@@ -3215,9 +3215,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Muetze42/helpers-collection-laravel/issues",
-                "source": "https://github.com/Muetze42/helpers-collection-laravel/tree/1.0.7"
+                "source": "https://github.com/Muetze42/helpers-collection-laravel/tree/1.0.9"
             },
-            "time": "2022-12-12T16:01:54+00:00"
+            "time": "2022-12-13T21:02:49+00:00"
         },
         {
             "name": "norman-huth/helpers-collection-php",

@@ -5,16 +5,11 @@ namespace App\Traits\Models;
 trait DefaultUser
 {
     /**
-     * Perform any actions required after the model boots.
+     * Boot Default User Trait
      *
      * @return void
      */
-    public static function booted(): void
-    {
-        static::defaultUser();
-    }
-
-    protected static function defaultUser(): void
+    protected static function bootDefaultUser(): void
     {
         static::creating(function ($model) {
             if (!$model->user_id) {

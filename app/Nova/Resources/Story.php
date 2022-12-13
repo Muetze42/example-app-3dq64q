@@ -10,7 +10,7 @@ use Laravel\Nova\Fields\MorphMany;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use Spatie\TagsField\Tags;
+use NormanHuth\HelpersLaravel\Spatie\Tags\Tags;
 
 class Story extends Resource
 {

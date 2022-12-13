@@ -25,7 +25,7 @@
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
         "norman-huth/api-controller": "dev-main",
-        "norman-huth/helpers-collection-laravel": "^1.0.5",
+        "norman-huth/helpers-collection-laravel": "^1.0.7",
         "spatie/laravel-activitylog": "^4.7",
         "spatie/laravel-medialibrary": "^10.7",
         "spatie/laravel-permission": "^5.7",
