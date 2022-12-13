@@ -6,7 +6,7 @@ use App\Traits\Models\DefaultUser;
 use App\Traits\Models\HasComments;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Spatie\Tags\HasTags;
+use NormanHuth\HelpersLaravel\Spatie\Tags\HasTags;
 
 /**
  * App\Models\Story
