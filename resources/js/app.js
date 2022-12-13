@@ -3,7 +3,6 @@ import {createInertiaApp, Link} from '@inertiajs/inertia-vue3';
 import {resolvePageComponent} from 'laravel-vite-plugin/inertia-helpers';
 import {InertiaProgress} from '@inertiajs/progress'
 import Layout from './Components/Layout.vue'
-import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 import Pagination from './Components/Pagination.vue';
 import axios from 'axios';
 window.axios = axios;
@@ -26,7 +25,6 @@ createInertiaApp({
             .use(plugin)
             .component("Link", Link)
             .component("Pagination", Pagination)
-            .component("font-awesome-icon", FontAwesomeIcon)
             .mixin({
                 methods: {
                     __(key, replace = {}) {
